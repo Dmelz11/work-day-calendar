@@ -2,9 +2,9 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-dayjs.extend(window.dayjs_plugin_advancedFormat)
+dayjs.extend(window.dayjs_plugin_advancedFormat);
 var currentDate = dayjs();
-var formattedDate = currentDate.format("dddd,MMMM,Do");
+var formattedDate = currentDate.format("dddd, MMMM, Do");
 
 $().ready (function(){
   $("#dateDisplay").text(formattedDate);
