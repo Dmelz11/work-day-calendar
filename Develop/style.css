@@ -2,7 +2,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
-
+h1 {
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+#dateDisplay {
+  text-align: center;
+}
 textarea {
   background: transparent;
   border: none;
