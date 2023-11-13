@@ -41,10 +41,10 @@ $(".description").each(function() {
 
 // I used the arttibute of the time block id to store data to localStorage on click
 // with the save button
-$(".saveBtn").on("click", function() {
-  var timeBlock = $(this).parent().attr("id");
-  var description = $(this).siblings(".description").val();
-  localStorage.setItem(timeBlock, description);
+$(".saveBtn").click( function() {
+  var userInput = $(this).siblings(".description").val();
+  var timeBlockId = $ (this).parent().attr("id");
+  localStorage.setItem(timeBlockId, userInput);
 });
 
 
