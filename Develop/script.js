@@ -2,13 +2,54 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-dayjs.extend(window.dayjs_plugin_advancedFormat);
-var currentDate = dayjs();
-var formattedDate = currentDate.format("dddd, MMMM, Do");
 
+
+//  jQuery .ready for wrapping code to wait until all html elements render
 $().ready (function(){
   $("#dateDisplay").text(formattedDate);
 });
+// dayjs advanced plugin for displaying the sufixes on date like the example
+dayjs.extend(window.dayjs_plugin_advancedFormat);
+var currentDate=dayjs();
+var currentHour = dayjs().hour(); 
+var formattedDate = currentDate.format('ddd, MMM, Do');
+
+// Using a jQuery function to add or change the class status 
+// of each time block using the id of stated hour
+// compared to actual time
+$(".time-block").each(function(){
+  var blockHour = parseInt($(this).attr("id").split("-")[1]);//
+  if (blockHour < currentHour) {
+    $(this).addClass("past");
+  } else if (blockHour === currentHour) {
+    $(this).addClass("present");
+  } else {
+    $(this).addClass("future");
+  }
+});
+
+
+
+// getting saved data from localStorage for each time block
+$(".description").each(function() {
+  var timeBlock = $(this).parent().attr("id");
+  var savedData = localStorage.getItem(timeBlock);
+  if (savedData) {
+    $(this).val(savedData);
+  }
+});
+
+// I used the arttibute of the time block id to store data to localStorage on click
+// with the save button
+$(".saveBtn").on("click", function() {
+  var timeBlock = $(this).parent().attr("id");
+  var description = $(this).siblings(".description").val();
+  localStorage.setItem(timeBlock, description);
+});
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
