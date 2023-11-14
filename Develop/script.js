@@ -10,7 +10,7 @@
 
     dayjs.extend(window.dayjs_plugin_advancedFormat);
 
-    var currentDate = dayjs().format('dddd, MMMM, Do');;
+    var currentDate = dayjs().format('dddd, MMMM, Do');
   
 
     $("#dateDisplay").text(currentDate);
