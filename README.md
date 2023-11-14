@@ -21,3 +21,11 @@ Great project and I'm happy to finally get it to a place where I can submit it.
 Screenshot:
 
 
+![Dmelz11 work-day-calendar](<Screenshot 2023-11-14 at 11.10.18 AM.png>)
+
+
+
+Links:
+
+https://github.com/Dmelz11/work-day-calendar
+https://dmelz11.github.io/work-day-calendar
