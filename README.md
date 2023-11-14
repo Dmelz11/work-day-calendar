@@ -12,13 +12,12 @@ classes of the individual time-blocks.
 
 Process:
 This challenge has really taught me quite a bit about jQuery, the DOM, local storage
-and github. I initially had some issues with the starter code and not realizing the correct 
-way to work with it locally. Because after working on it for awhile I went to commit and push some 
-changes to main and they went to crispy-octo-meme instead of my github repo...that of course didn't work
-out. Once I got that issue delt with it took some time and effort to navigate using dayjs to affect the
-changes to the time-block class status. I got some raelly good help from my tutor Juan Santiago, who 
-helped me get more familiar with jQuery and helped me deal with a couple issues with setting up dayjs.
-Also I got some assistance from my TA Jin Yi, who helped me work out an issue with local storage. So
-I definately received some good guidance and googled the documentation and reviewed some class activity
-material, stack overflow, geeks for geeks etc.. Great project and I'm happy to finally get it to a 
-place where I can submit it.
+and github. I initially had some issues with the starter code and not realizing the correct way to work with it locally. Because after working on it for awhile I went to commit and push some changes to main and they went to crispy-octo-meme instead of my github repo...that of course didn't work out. Once I got that issue dealt with it took some time and effort to navigate using dayjs to affect the changes to the time-block class status. I got some really good help from my tutor Juan Santiago, who 
+helped me get more familiar with jQuery and helped me deal with a couple of issues with setting up dayjs. I also got some assistance last night during office hours from my TA, Jin Yi, who helped me learn to use the 'application' setting in the inspection tools to work out an issue with local storage. So I definately couldn't have done it alone and received some good guidance from my human resouces and then there's googling the documentation and reviewing some class activity material, stack overflow, geeks for geeks etc..
+Even this morning, I woke up and it dawned on me why the past, present and future background colors weren't working past 12PM. It was because the id for 1PM was 'hour-1' instead of 'hour-13'. When I changed it to 24 hour time it worked like 
+I was hoping it would. Still learning from this challenge! 
+Great project and I'm happy to finally get it to a place where I can submit it.
+
+Screenshot:
+
+

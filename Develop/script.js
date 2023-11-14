@@ -36,9 +36,9 @@
     }
   });
 // getting saved data from localStorage for each time block
-$(".saveBtn").click (function(){
-  var userInput = $(this).siblings(".description").val();
+$(".saveBtn").on('click',function(){
   var timeBlockId = $(this).parent().attr("id");
+  var userInput = $(this).siblings(".description").val();
   localStorage.setItem(timeBlockId, userInput);
 });
 
@@ -46,7 +46,7 @@ $(".saveBtn").click (function(){
     var timeBlockId = $(this).attr("id");
     var savedUserInput = localStorage.getItem(timeBlockId);
     if (savedUserInput) {
-      $(this).find(savedUserInput);
+      $(this).find(".description").val(savedUserInput);
     }
   });
 // I used the arttibute of the time block id to store data to localStorage on click
