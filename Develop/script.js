@@ -2,50 +2,59 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-
-
 //  jQuery .ready for wrapping code to wait until all html elements render
-$().ready (function(){
-  $("#dateDisplay").text(formattedDate);
-});
+
+  $(document).ready (function(){
+
 // dayjs advanced plugin for displaying the sufixes on date like the example
-dayjs.extend(window.dayjs_plugin_advancedFormat);
-var currentDate=dayjs();
-var currentHour = dayjs().hour(); 
-var formattedDate = currentDate.format('ddd, MMM, Do');
+
+    dayjs.extend(window.dayjs_plugin_advancedFormat);
+
+    var currentDate = dayjs().format('dddd, MMMM, Do');;
+  
+
+    $("#dateDisplay").text(currentDate);
+  
+  var currentHour = dayjs().hour();
 
 // Using a jQuery function to add or change the class status 
 // of each time block using the id of stated hour
 // compared to actual time
-$(".time-block").each(function(){
-  var blockHour = parseInt($(this).attr("id").split("-")[1]);//
-  if (blockHour < currentHour) {
-    $(this).addClass("past");
-  } else if (blockHour === currentHour) {
-    $(this).addClass("present");
-  } else {
-    $(this).addClass("future");
-  }
-});
 
-
-
+  $(".time-block").each(function() {
+    var hourId = parseInt($(this).attr("id").split("-")[1]);
+    console.log("Current Hour:", currentHour);
+    if (hourId < currentHour) {
+     $(this).addClass ("past");
+    } else if (hourId === currentHour) {
+      $(this).removeClass ("past");
+      $(this).addClass ("present");
+    } else {
+     $(this).removeClass ("past"); 
+     $(this).removeClass ("present"); 
+     $(this).addClass ("future");
+    }
+  });
 // getting saved data from localStorage for each time block
-$(".description").each(function() {
-  var timeBlock = $(this).parent().attr("id");
-  var savedData = localStorage.getItem(timeBlock);
-  if (savedData) {
-    $(this).val(savedData);
-  }
-});
-
-// I used the arttibute of the time block id to store data to localStorage on click
-// with the save button
-$(".saveBtn").click( function() {
+$(".saveBtn").click (function(){
   var userInput = $(this).siblings(".description").val();
-  var timeBlockId = $ (this).parent().attr("id");
+  var timeBlockId = $(this).parent().attr("id");
   localStorage.setItem(timeBlockId, userInput);
 });
+
+  $(".time-block").each(function() {
+    var timeBlockId = $(this).attr("id");
+    var savedUserInput = localStorage.getItem(timeBlockId);
+    if (savedUserInput) {
+      $(this).find(savedUserInput);
+    }
+  });
+// I used the arttibute of the time block id to store data to localStorage on click
+// with the save button
+
+  
+});
+
 
 
 
