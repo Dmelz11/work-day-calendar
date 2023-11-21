@@ -35,12 +35,15 @@
      $(this).addClass ("future");
     }
   });
-// getting saved data from localStorage for each time block
+//  I used the arttibute of the time block id to store data to localStorage on click
+//  with the save button
+
 $(".saveBtn").on('click',function(){
   var timeBlockId = $(this).parent().attr("id");
   var userInput = $(this).siblings(".description").val();
   localStorage.setItem(timeBlockId, userInput);
 });
+// getting saved data from localStorage for each time block
 
   $(".time-block").each(function() {
     var timeBlockId = $(this).attr("id");
@@ -49,8 +52,6 @@ $(".saveBtn").on('click',function(){
       $(this).find(".description").val(savedUserInput);
     }
   });
-// I used the arttibute of the time block id to store data to localStorage on click
-// with the save button
 
   
 });
