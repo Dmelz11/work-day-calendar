@@ -21,7 +21,8 @@ Great project and I'm happy to finally get it to a place where I can submit it.
 Screenshot:
 
 
-![Dmelz11 work-day-calendar](<Screenshot 2023-11-14 at 11.10.18 AM.png>)
+<img width="1152" alt="Screenshot 2024-02-24 at 9 45 55 PM" src="https://github.com/Dmelz11/work-day-calendar/assets/143745882/21131deb-a5c4-4ba3-9e26-5d4acae3ea09">
+
 
 
 
